@@ -1,0 +1,16 @@
+The 'linker name' of a shared library is free of any version information (libsmfl-_____.so)
+and exists solely as a symbolic link to the 'soname' or in some cases the 'real name' of the 
+library.
+
+The 'soname' of the libraries referenced in the 'render-world' application are listed with
+version 2.5 (libsfml-______.so.2.5, 2nd through 4th in the list in the image). This name acts
+as a symbolic link to the 'real name' of the library, and is embedded in the executable during
+linking, after compilation. Used to identify the latest compatible major version of the library.
+
+The 'real name' of these libraries can be found in the next screenshot with the final version
+(libsmfl-______2.5.1), this is the name of the actual binary file for the lib, containing
+the library code
+
+The OS uses these names as symbolic links to each other in a sort of cascade, beginning
+with the 'linker name', linking to the 'soname', which then links to the 'real name'
+

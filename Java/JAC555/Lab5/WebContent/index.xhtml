@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<title>Coffee shop online order</title>
+	<h:outputStylesheet name="css/styles.css"/>
+</h:head>
+<h:body>
+	<h1>Coffee shop online order</h1>
+	<h:form>
+		<h:outputLabel>Hello Dear Customer, Choose your items below:</h:outputLabel>
+		<table>
+			<tr>
+				<th>Meal</th>
+				<th>Type</th>
+				<th>Quantity</th>
+				<th>Price</th>
+			</tr>
+			<tr>
+				<td>Breakfast Combo</td>
+				<td>
+					<h:selectOneMenu id="breakfast" value = "#{validationBean.breakfast}"> 
+			           <f:selectItem itemValue = "with Coffee" itemLabel = "with Coffee" /> 
+			           <f:selectItem itemValue = "with Tea" itemLabel = "with Tea" />   
+			        </h:selectOneMenu>
+				</td>
+				<td><h:inputText style="width: 40px" id="breakfastQty" required="true" requiredMessage="Breakfast Quantity is required.">
+					<f:validateRequired />
+				</h:inputText></td>
+				<td>$11.99</td>
+				<td><h:message id="breakfastMsg" for="breakfastQty" style="color:red" /></td>
+			</tr>
+			<tr>
+				<td>Hot Coffee</td>
+				<td>
+					<h:selectOneMenu id="coffee" value = "#{validationBean.coffee}"> 
+			           <f:selectItem itemValue = "Colombian" itemLabel = "Colombian" /> 
+			           <f:selectItem itemValue = "Reserva" itemLabel = "Reserva" />   
+			           <f:selectItem itemValue = "Internet &#38; World Wide Wed How to Program" itemLabel = "Internet &#38; World Wide Wed How to Program" /> 
+			           <f:selectItem itemValue = "Decaf" itemLabel = "Decaf" />
+			           <f:selectItem itemValue = "Coffee Misto" itemLabel = "Coffee Misto" /> 
+			           <f:selectItem itemValue = "Dark roast" itemLabel = "Dark roast" />
+			        </h:selectOneMenu>
+				</td>
+				<td><h:inputText style="width: 40px" id="coffeeQty" required="true" requiredMessage="Coffee Quantity is required.">
+					<f:validateRequired />
+				</h:inputText></td>
+				<td>$2.99</td>
+				<td><h:message id="coffeeMsg" for="coffeeQty" style="color:red" /></td>
+			</tr>
+			<tr>
+				<td>Hot Tea</td>
+				<td>
+					<h:selectOneMenu id="tea" value = "#{validationBean.tea}"> 
+			           <f:selectItem itemValue = "Green" itemLabel = "Green" /> 
+			           <f:selectItem itemValue = "English Breakfast" itemLabel = "English Breakfast" />   
+			           <f:selectItem itemValue = "Chai" itemLabel = "Chai" />
+			           <f:selectItem itemValue = "Latte" itemLabel = "Latte" /> 
+			           <f:selectItem itemValue = "London Fog" itemLabel = "London Fog" />
+			        </h:selectOneMenu>
+				</td>
+				<td><h:inputText style="width: 40px" id="teaQty" required="true" requiredMessage="Tea Quantity is required.">
+					<f:validateRequired />
+				</h:inputText></td>
+				<td>$3.49</td>
+				<td><h:message id="teaMsg" for="teaQty" style="color:red" /></td>
+			</tr>
+		</table>
+		
+		<h:outputLabel>How would you like to get your items?</h:outputLabel>
+		<br/>
+		<h:selectOneRadio value="#{validationBean.deliveryTakeOut}" id="deliveryTakeOut" required="true" requiredMessage="Delivery/ Take Out option is required.">
+			<f:selectItem itemValue="delivery" itemLabel="Delivery" />
+   			<f:selectItem itemValue="takeOut" itemLabel="Take Out" />
+		</h:selectOneRadio>
+		<h:message id="deliveryTakeOutMsg" for="deliveryTakeOut" style="color:red"></h:message><br/>
+		<h:commandButton value="Place Order" >
+			<f:ajax execute="deliveryTakeOut tea teaQty coffee coffeeQty breakfast breakfastQty" render="deliveryTakeOutMsg teaMsg coffeeMsg breakfastMsg orderPlaced"/>
+		</h:commandButton>
+		<br/><br/>
+		 <h:outputText id="orderPlaced" style="background-color:yellow;" value="#{validationBean.result}"/>
+	</h:form>
+</h:body>
+</html>

@@ -1,0 +1,16 @@
+Assignment Submission Form
+==========================================================================
+I/we declare that the attached assignment is my/our work in accordance with
+Seneca Academic Policy. No part of this assignment has been copied manually or
+electronically from any other source (including web sites) or distributed to other
+students.
+ 
+Name(s) Tanner Moss
+Student ID(s) 017896150
+
+--------------------------------------------------------------------------
+
+My code is basically trying to emulate the functionality of the string class in the java base library.
+I had to create a handful of the methods that come along with the java base string class such as "charAt" and "equals".
+I tried to make it as simple as I could but also as secure as possible, covering things like trying to print a 'null'
+char array, and invalid index exceptions.

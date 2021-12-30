@@ -1,0 +1,1 @@
+cmd_/media/wolf/Rime/School/UNX511/Labs/Lab4/Lab4/kernel/Module.symvers := sed 's/ko$$/o/' /media/wolf/Rime/School/UNX511/Labs/Lab4/Lab4/kernel/modules.order | scripts/mod/modpost -m -a   -o /media/wolf/Rime/School/UNX511/Labs/Lab4/Lab4/kernel/Module.symvers -e -i Module.symvers   -T -

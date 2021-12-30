@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cars>
+  <car>
+    <year>2015</year>
+    <make>Audi</make>
+    <model>R8</model>
+    <price>112996.0</price>
+  </car>
+  <car>
+    <year>2013</year>
+    <make>Ford</make>
+    <model>Mustang</model>
+    <price>22995.0</price>
+  </car>
+  <car>
+    <year>2020</year>
+    <make>Honda</make>
+    <model>RDX</model>
+    <price>34899.0</price>
+  </car>
+  <car>
+    <year>2009</year>
+    <make>Porsche</make>
+    <model>911</model>
+    <price>90800.0</price>
+  </car>
+</cars>

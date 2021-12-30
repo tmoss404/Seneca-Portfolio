@@ -1,0 +1,1 @@
+cmd_/media/wolf/Rime/School/UNX511/Labs/Lab4/Lab4/kernel/Hardware-Device.mod := { echo  /media/wolf/Rime/School/UNX511/Labs/Lab4/Lab4/kernel/hardwareDevice.o;  echo; } > /media/wolf/Rime/School/UNX511/Labs/Lab4/Lab4/kernel/Hardware-Device.mod

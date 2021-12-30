@@ -1,0 +1,1 @@
+cmd_/media/wolf/Rime/School/UNX511/Labs/Lab4/Lab4/kernel/Hardware-Device.o := ld -m elf_x86_64    -r -o /media/wolf/Rime/School/UNX511/Labs/Lab4/Lab4/kernel/Hardware-Device.o /media/wolf/Rime/School/UNX511/Labs/Lab4/Lab4/kernel/hardwareDevice.o
